@@ -9,6 +9,34 @@ body {
     flex-direction: column; /* Stack items properly */
     transition: background-color 0.3s ease, color 0.3s ease;
 }
+/* Center the heading properly */
+.heading {
+    text-align: center;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.heading h2 {
+    font-size: 1.8rem; /* Default size */
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .heading h2 {
+        font-size: 1.6rem; /* Slightly smaller on tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .heading h2 {
+        font-size: 1.4rem; /* Even smaller on mobile */
+    }
+}
+
 
 /* Light Theme (Default) */
 body.light-theme {
