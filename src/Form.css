@@ -1,0 +1,183 @@
+/* Base Body Styling - Now Fully Responsive */
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh; /* Ensure full height on all screens */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; /* Stack items properly */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Light Theme (Default) */
+body.light-theme {
+    background-color: #9055ff;
+    color: black;
+}
+
+/* Dark Theme */
+body.dark-theme {
+    background-color: black;
+    color: white;
+}
+
+/* Form Container - Fully Responsive */
+.school-form {
+    width: 90%; /* Adjust width dynamically */
+    max-width: 400px; /* Prevent it from getting too wide */
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+}
+
+/* Dark Theme for Form */
+.dark-theme .school-form {
+    background-color: black;
+    color: white;
+}
+
+/* Form Fields */
+.school-name-field, .schooler-name-field, .parent-name-field, 
+.phone-number-field, .parent-email-field, .preferred-sport-field {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 15px;
+}
+
+.schooler-name-box, .parent-name-box {
+    display: flex;
+    gap: 10px;
+}
+
+/* Input Fields */
+.schooler-first-name, .schooler-last-name, .parent-first-name, .parent-last-name,
+.school-name, .phone-number, .parent-email, .preferred-sport {
+    width: 100%;
+    height: 35px;
+    padding: 5px;
+    outline: none;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Button Box */
+.button-box {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+/* Buttons */
+.reset, .submit {
+    height: 40px;
+    width: 100px;
+    font-size: 1rem;
+    background-color: blue;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Theme Toggle - Always Visible */
+.theme-toggle {
+    position: fixed; /* Fixed so it stays in place */
+    top: 15px;
+    right: 15px;
+    width: 60px;
+    height: 30px;
+    background: #ccc;
+    border-radius: 30px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    z-index: 1000; /* Ensures it appears above other elements */
+}
+
+/* Toggle Circle */
+.theme-toggle::before {
+    content: "";
+    width: 24px;
+    height: 24px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    transition: 0.3s ease;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Dark Mode Active */
+.dark-theme .theme-toggle {
+    background: white;
+    border: 1px solid white;
+}
+
+/* Move Toggle Circle to Right for Dark Mode */
+.dark-theme .theme-toggle::before {
+    transform: translateX(30px);
+    background: white;
+}
+
+/* ✅ Responsive Adjustments */
+@media (max-width: 768px) {
+    .theme-toggle {
+        top: 10px;
+        right: 10px;
+        width: 55px;
+        height: 28px;
+    }
+
+    .school-form {
+        width: 95%;
+        max-width: 350px;
+    }
+
+    .reset, .submit {
+        width: 90px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .theme-toggle {
+        top: 5px;
+        right: 5px;
+        width: 50px;
+        height: 25px;
+    }
+
+    .theme-toggle::before {
+        width: 20px;
+        height: 20px;
+        top: 2px;
+        left: 2px;
+    }
+
+    .dark-theme .theme-toggle::before {
+        transform: translateX(25px);
+    }
+
+    .school-form {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .button-box {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .reset, .submit {
+        width: 100%;
+        font-size: 1rem;
+    }
+}
