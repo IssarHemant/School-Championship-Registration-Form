@@ -41,19 +41,31 @@ const Form = () => {
       <div className="schooler-name-field">
         <label>Schooler Name:</label>
         <div className="schooler-name-box">
-        <input className="schooler-first-name" type="text" placeholder="First name" {...register("firstschoolerName",{required:true,minLength:{value:3,message:"Min. length should be 3"},maxLength:{value:10,message:"Max. length should be 10"}})} />
-        {errors.firstschoolerName&&<p>{errors.firstschoolerName.message}</p>}
-        <input className="schooler-last-name" type="text" placeholder="Last name" {...register("lastschoolerName",{required:true,minLength:{value:3,message:"Min. length should be 3"},maxLength:{value:10,message:"Max. length should be 10"}})}/>
-        {errors.lastschoolerName&&<p>{errors.lastschoolerName.message}</p>}
+        <div className="input-group">
+      <input className="schooler-first-name" type="text" placeholder="First name" 
+        {...register("firstschoolerName", { required: true, minLength: { value: 3, message: "Min. length should be 3" }, maxLength: { value: 10, message: "Max. length should be 10" } })} />
+      {errors.firstschoolerName && <p className="error-message">{errors.firstschoolerName.message}</p>}
+    </div>
+    <div className="input-group">
+      <input className="schooler-last-name" type="text" placeholder="Last name" 
+        {...register("lastschoolerName", { required: true, minLength: { value: 3, message: "Min. length should be 3" }, maxLength: { value: 10, message: "Max. length should be 10" } })} />
+      {errors.lastschoolerName && <p className="error-message">{errors.lastschoolerName.message}</p>}
+    </div>
       </div>
       </div>
       <div className="parent-name-field">
         <label>Parent Name:</label>
         <div className="parent-name-box">
-        <input className="parent-first-name" type="text" placeholder="First name" {...register("parentfirstName",{required:true,minLength:{value:3,message:"Min. length should be 3"},maxLength:{value:10,message:"Max. length should be 10"}})}/>
-        {errors.parentfirstName&&<p>{errors.parentfirstName.message}</p>}
-        <input className="parent-last-name" type="text" placeholder="Last name" {...register("parentlastName",{required:true,minLength:{value:3,message:"Min. length should be 3"},maxLength:{value:10,message:"Max. length should be 10"}})}/>
-        {errors.parentlastName&&<p>{errors.parentlastName.message}</p>}
+        <div className="input-group">
+      <input className="parent-first-name" type="text" placeholder="First name" 
+        {...register("parentfirstName", { required: true, minLength: { value: 3, message: "Min. length should be 3" }, maxLength: { value: 10, message: "Max. length should be 10" } })} />
+      {errors.parentfirstName && <p className="error-message">{errors.parentfirstName.message}</p>}
+    </div>
+    <div className="input-group">
+      <input className="parent-last-name" type="text" placeholder="Last name" 
+        {...register("parentlastName", { required: true, minLength: { value: 3, message: "Min. length should be 3" }, maxLength: { value: 10, message: "Max. length should be 10" } })} />
+      {errors.parentlastName && <p className="error-message">{errors.parentlastName.message}</p>}
+    </div>
       </div>
       </div>
       <div className="phone-number-field">

@@ -62,6 +62,19 @@ body.dark-theme {
     border-radius: 5px;
 }
 
+/* Error Messages - Now in Column Layout */
+.error-message {
+    display: flex;
+    flex-direction: column; /* Stack error messages */
+}
+
+/* Responsive Fix */
+@media (max-width: 480px) {
+    .schooler-name-box, .parent-name-box {
+        flex-direction: column;
+        gap: 5px;
+    }
+}
 /* Button Box */
 .button-box {
     display: flex;
